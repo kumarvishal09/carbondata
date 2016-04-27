@@ -34,6 +34,7 @@ import org.carbondata.core.carbon.datastore.impl.btree.BtreeDataRefNodeFinder;
 import org.carbondata.core.carbon.metadata.datatype.DataType;
 import org.carbondata.core.carbon.metadata.encoder.Encoding;
 import org.carbondata.core.keygenerator.KeyGenerator;
+import org.carbondata.query.carbon.executor.exception.QueryExecutionException;
 import org.carbondata.query.carbonfilterinterface.ExpressionType;
 import org.carbondata.query.expression.BinaryExpression;
 import org.carbondata.query.expression.Expression;

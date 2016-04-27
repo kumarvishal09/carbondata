@@ -36,6 +36,7 @@ import org.carbondata.core.carbon.datastore.impl.btree.BTreeNode;
 import org.carbondata.core.carbon.datastore.impl.btree.BlockBtreeLeafNode;
 import org.carbondata.core.carbon.path.CarbonStorePath;
 import org.carbondata.core.carbon.path.CarbonTablePath;
+import org.carbondata.query.carbon.executor.exception.QueryExecutionException;
 import org.carbondata.query.expression.Expression;
 import org.carbondata.query.filter.resolver.FilterResolverIntf;
 import org.carbondata.query.filters.FilterExpressionProcessor;
@@ -146,7 +147,7 @@ public class CarbonInputFormat<T> extends FileInputFormat<Void, T> {
    * @throws IOException
    */
   public List<InputSplit> getSplits(JobContext job, Expression filterExpression)
-      throws IOException, IndexBuilderException {
+      throws IOException, IndexBuilderException, QueryExecutionException {
 
     FilterExpressionProcessor filterExpressionProcessor = new FilterExpressionProcessor();
     AbsoluteTableIdentifier absoluteTableIdentifier =
@@ -202,7 +203,7 @@ public class CarbonInputFormat<T> extends FileInputFormat<Void, T> {
    * @throws IOException
    */
   public FilterResolverIntf getResolvedFilter(JobContext job, Expression filterExpression)
-      throws IOException, IndexBuilderException {
+      throws IOException, IndexBuilderException, QueryExecutionException {
 
     FilterExpressionProcessor filterExpressionProcessor = new FilterExpressionProcessor();
     AbsoluteTableIdentifier absoluteTableIdentifier =
