@@ -35,7 +35,6 @@ import org.carbondata.core.carbon.metadata.datatype.DataType;
 import org.carbondata.core.carbon.metadata.encoder.Encoding;
 import org.carbondata.core.keygenerator.KeyGenerator;
 import org.carbondata.query.carbonfilterinterface.ExpressionType;
-import org.carbondata.query.executer.exception.QueryExecutionException;
 import org.carbondata.query.expression.BinaryExpression;
 import org.carbondata.query.expression.Expression;
 import org.carbondata.query.expression.conditional.BinaryConditionalExpression;
@@ -66,7 +65,6 @@ public class FilterExpressionProcessor implements FilterProcessor {
       AbsoluteTableIdentifier tableIdentifier) throws QueryExecutionException {
     if (null != expressionTree && null != tableIdentifier) {
       return getFilterResolvertree(expressionTree, tableIdentifier);
-
     }
     return null;
   }
