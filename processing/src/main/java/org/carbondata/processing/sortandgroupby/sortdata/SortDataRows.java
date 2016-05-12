@@ -164,11 +164,11 @@ public class SortDataRows {
   /**
    * This will tell whether dimension is dictionary or not.
    */
-  private Boolean[] noDictionaryColMaping;
+  private boolean[] noDictionaryColMaping;
 
   public SortDataRows(String tableName, int dimColCount, int complexDimColCount,
       int measureColCount, SortObserver observer, int noDictionaryCount, String[] measureDatatype,
-      String partitionID, int segmentId, String taskNo, Boolean[] noDictionaryColMaping) {
+      String partitionID, int segmentId, String taskNo, boolean[] noDictionaryColMaping) {
     // set table name
     this.tableName = tableName;
     this.partitionID = partitionID;
@@ -544,7 +544,6 @@ public class SortDataRows {
         .getProperty(CarbonCommonConstants.SORT_SIZE, CarbonCommonConstants.SORT_SIZE_DEFAULT_VAL));
 
     LOGGER.info("Sort size for cube: " + this.sortBufferSize);
-
     // set number of intermedaite file to merge
     this.numberOfIntermediateFileToBeMerged = Integer.parseInt(instance
         .getProperty(CarbonCommonConstants.SORT_INTERMEDIATE_FILES_LIMIT,

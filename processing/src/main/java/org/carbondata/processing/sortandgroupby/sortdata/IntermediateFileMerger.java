@@ -244,7 +244,7 @@ public class IntermediateFileMerger implements Callable<Void> {
           new SortTempFileChunkHolder(tempFile, mergerParameters.getDimColCount(),
               mergerParameters.getComplexDimColCount(), mergerParameters.getMeasureColCount(),
               mergerParameters.getFileReadBufferSize(), mergerParameters.getNoDictionaryCount(),
-              mergerParameters.getAggType());
+              mergerParameters.getAggType(),mergerParameters.getIsNoDictionaryDimensionColumn());
 
       // initialize
       sortTempFileChunkHolder.initialize();
